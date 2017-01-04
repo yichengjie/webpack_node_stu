@@ -1,0 +1,7 @@
+{
+    "name": "webpack_node_stu",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "node build/dev-server.js"
+    }
+}
