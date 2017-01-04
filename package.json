@@ -1,0 +1,23 @@
+{
+  "name": "webpack_node_stu",
+  "version": "1.0.0",
+  "description": "webpack with nodejs platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yichengjie/webpack_node_stu.git"
+  },
+  "keywords": [
+    "webpack",
+    "node"
+  ],
+  "author": "yicj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yichengjie/webpack_node_stu/issues"
+  },
+  "homepage": "https://github.com/yichengjie/webpack_node_stu#readme"
+}
