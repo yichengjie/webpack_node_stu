@@ -44,6 +44,11 @@ var baseConfig = {
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
+         new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        }),
     ]
 };
 

@@ -30,9 +30,6 @@ app.get('/api/hello', function (req, res) {
 });
 
 
-
-
-
 var devMiddleware = webpackDevMiddleware(compiler,{
   publicPath: webpackConfig.output.publicPath,
   stats: {
