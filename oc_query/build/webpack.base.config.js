@@ -2,15 +2,16 @@ var webpack = require('webpack');
 var path = require('path');
 var config = require('../config') ;
 var ExtractTextPlugin = require("extract-text-webpack-plugin") ;
-var projectRoot = path.resolve(__dirname, '../')
+var projectRoot = path.resolve(__dirname, '../') ;
 
-var publicPath = 'http://localhost:3000/';
-var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
+var SRC_PATH =  path.resolve(__dirname,'../src');
+var ASSETS_PATH = path.resolve(__dirname,'../src/assets');
+var LIB_PATH = path.resolve(__dirname,'../src/lib');
+var DIST_PATH = path.resolve(__dirname,'../dist') ;
+
 
 var baseConfig = {
-    entry: {
-        app: './src/main.js'
-    },
+    entry: SRC_PATH+'/main.js',
     output: {
         path: config.build.assetsRoot,
         publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
@@ -21,7 +22,22 @@ var baseConfig = {
         extensions: ['', '.js', '.vue'],
         fallback: [path.join(__dirname, '../node_modules')],
         alias: {
-          'vue$': 'vue/dist/vue.common.js'
+            'vue': 'vue/dist/vue.js',
+            'assets': ASSETS_PATH,
+            'tui_core_lib':LIB_PATH+"/tui-core/index.js",
+            'tui_dialog_lib':LIB_PATH+"/tui-dialog/index.js",
+            'tui_drag_lib':LIB_PATH+"/tui-drag/index.js",
+            'jq_datepicker_lib': LIB_PATH+"/jq-datepicker/index.js",
+            'jq_timepicker_lib':LIB_PATH+"/jq-timepicker/index.js",
+            'modal_lib':LIB_PATH+"/modal.js",
+            'iconfont_lib':LIB_PATH+"/iconfont/iconfont.js",
+            'HttpClientUtil_lib':LIB_PATH+"/HttpClientUtil.js",
+            'util_lib':LIB_PATH+"/util.js",
+            'lodash_lib':LIB_PATH+"/lodash/lodash.js",
+            'moment_lib':LIB_PATH+"/moment/index.js",
+            'ajaxfileupload_lib':LIB_PATH+"/ajaxfileupload.js",
+            'is_loading_lib':LIB_PATH+"/is-loading/index.js",
+            'bt_growl_lib':LIB_PATH+"/bt-grow/jquery.bootstrap-growl.js"
         }
     },
     resolveLoader: {
@@ -42,9 +58,15 @@ var baseConfig = {
             {test: /\.(png|jpg|gif|svg)$/,loader: 'file',query: {name: '[name].[ext]?[hash]'}}
         ]
     },
+    vue: {
+       loaders: {
+          css: ExtractTextPlugin.extract("css")
+       }
+    },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
-         new webpack.ProvidePlugin({
+        new ExtractTextPlugin("[name].css"),
+        new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery"
