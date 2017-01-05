@@ -1,0 +1,483 @@
+{
+    "formData":{
+        "firstMaintenanceDate":"2016-12-08 00:00",
+        "travelStartDate":"2016-12-11" 
+    },
+    "tb163List": [
+        {
+            "id": {
+                "tblNo": 1,
+                "lineNo": 1
+            },
+            "recType": 3,
+            "action": 2,
+            "tblId": 163,
+            "carrier": "CA",
+            "serviceType": "F",
+            "subCode": "BD1",
+            "subCodeOccurence": "1",
+            "sequenceNumber": 123,
+            "lastUpdateDate": "2016-08-03",
+            "lastUpdateUser": "CA",
+            "commercialName": "优选座位"
+        },
+        {
+            "id": {
+                "tblNo": 1,
+                "lineNo": 2
+            },
+            "recType": 3,
+            "action": 2,
+            "tblId": 163,
+            "carrier": "CA",
+            "serviceType": "F",
+            "subCode": "BD1",
+            "subCodeOccurence": "1",
+            "sequenceNumber": 123,
+            "lastUpdateDate": "2016-08-03",
+            "lastUpdateUser": "CA",
+            "commercialName": "优选座位2"
+        }
+    ],
+    "equipmentList": [
+        {
+            "code": "747",
+            "description": "B747-400CMB"
+        },
+        {
+            "code": "73G",
+            "description": "B737-700"
+        },
+        {
+            "code": "733",
+            "description": "B737-3z00"
+        },
+        {
+            "code": "340",
+            "description": "A340-300"
+        },
+        {
+            "code": "319",
+            "description": "A319-111"
+        }
+    ],
+    "flag": "true",
+    "ffpList": [
+        {
+            "id": "8be6a271ea7c4435b74460c277c204da",
+            "cardType": "V",
+            "carr": "CA",
+            "description": "白金卡",
+            "ffpStatus": "1"
+        },
+        {
+            "id": "3b77accb37d94d6ea4fcf9e00694f9cf",
+            "cardType": "G",
+            "carr": "CA",
+            "description": "金卡",
+            "ffpStatus": "2"
+        },
+        {
+            "id": "c5eab8fe739b42f49f8a07ac0654831a",
+            "cardType": "C",
+            "carr": "CA",
+            "description": "银卡",
+            "ffpStatus": "3"
+        },
+        {
+            "id": "3b72585de6264f76a8059f7aa220b98c",
+            "cardType": "P",
+            "carr": "CA",
+            "description": "普通卡",
+            "ffpStatus": "4"
+        }
+    ],
+    "passengerList": [
+        {
+            "psgrTypeCode": "ADT",
+            "psgrTypeDesc": "成人"
+        },
+        {
+            "psgrTypeCode": "CNN",
+            "psgrTypeDesc": "儿童"
+        },
+        {
+            "psgrTypeCode": "UNN",
+            "psgrTypeDesc": "无人陪伴儿童"
+        }
+    ],
+    "serviceGroupList": [
+        {
+            "attributesGroup": "244",
+            "serviceGroupDescription": "344",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BG",
+            "serviceGroupDescription": "Baggage",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "TS",
+            "serviceGroupDescription": "空",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BDSA",
+            "serviceGroupDescription": "bdsa",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BDAP",
+            "serviceGroupDescription": "2",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "FF",
+            "serviceGroupDescription": "F1F2F3",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "4",
+            "serviceGroupDescription": "4",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "UP",
+            "serviceGroupDescription": "Upgrades",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "RG",
+            "serviceGroupDescription": "空",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "234",
+            "serviceGroupDescription": "2",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "1233",
+            "serviceGroupDescription": "123456789012345678901234567890",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "SA",
+            "serviceGroupDescription": "Pre-reserved Seat Assignment",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "TS",
+            "serviceGroupDescription": "Travel Services",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BDUP",
+            "serviceGroupDescription": "空",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BD",
+            "serviceGroupDescription": "78",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BD",
+            "serviceGroupDescription": "bd",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BD",
+            "serviceGroupDescription": "56",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "4566",
+            "serviceGroupDescription": "123456789012345678901234567890",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "Y",
+            "serviceGroupDescription": "yuu",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "34",
+            "serviceGroupDescription": "34",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "666",
+            "serviceGroupDescription": "666",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "54",
+            "serviceGroupDescription": "54",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "AP",
+            "serviceGroupDescription": "123456789012345678901234567890",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BDSA",
+            "serviceGroupDescription": "空",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "FL",
+            "serviceGroupDescription": "空",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BF",
+            "serviceGroupDescription": "Branded Fares",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "55",
+            "serviceGroupDescription": "55",
+            "s7VoList": [ ]
+        },
+        {
+            "attributesGroup": "BD",
+            "serviceGroupDescription": "123456789012345678901234567890",
+            "s7VoList": [ ]
+        }
+    ],
+    "serviceChooseList": [
+        {
+            "id": "56372eb40480478a83e85040f945e416",
+            "carrCode": "CA",
+            "serviceType": "F",
+            "serviceSubCode": "123",
+            "commercialName": "通用券-fp",
+            "attributesGroup": "FP",
+            "attributesSubgroup": "FP",
+            "serviceGroupDescription": "通用券",
+            "subGroupDescription": "通用券",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "8fefc6fcce0e4c8e8df3772cb3ac609a",
+            "carrCode": "CA",
+            "serviceType": "F",
+            "serviceSubCode": "0JK",
+            "commercialName": "Fare Lock-fl",
+            "attributesGroup": "FL",
+            "attributesSubgroup": "FL",
+            "serviceGroupDescription": "fare lock",
+            "subGroupDescription": "fare lock",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "7d10d15697e5477b83f09470c5a0f9fc",
+            "carrCode": "CA",
+            "serviceType": "A",
+            "serviceSubCode": "0JJ",
+            "commercialName": "免费行李",
+            "attributesGroup": "BG",
+            "attributesSubgroup": "",
+            "serviceGroupDescription": "Baggage",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "b293f43b9e9a4b4eb393e86307c921a6",
+            "carrCode": "CA",
+            "serviceType": "C",
+            "serviceSubCode": "0B5",
+            "commercialName": "收费行李",
+            "attributesGroup": "BG",
+            "attributesSubgroup": "22",
+            "serviceGroupDescription": "bg",
+            "subGroupDescription": "bg",
+            "subCodeTableNo163": 9000101
+        },
+        {
+            "id": "lz20151224-v2.2.1-P1",
+            "carrCode": "CA",
+            "serviceType": "P",
+            "serviceSubCode": "0FJ",
+            "commercialName": "收费行李-P",
+            "attributesGroup": "BG",
+            "attributesSubgroup": "",
+            "serviceGroupDescription": "Baggage",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "47373a083900461591a6d8c7314e860d",
+            "carrCode": "CA",
+            "serviceType": "B",
+            "serviceSubCode": "0B5",
+            "commercialName": "免费行李B",
+            "attributesGroup": "SA",
+            "attributesSubgroup": "",
+            "serviceGroupDescription": "Pre-reserved Seat Assignment",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "c8606770bbb84f66ac026a87acd78a30",
+            "carrCode": "CA",
+            "serviceType": "M",
+            "serviceSubCode": "0G6",
+            "commercialName": "普通服务M类型",
+            "attributesGroup": "TS",
+            "attributesSubgroup": "PR",
+            "serviceGroupDescription": "Travel Services",
+            "subGroupDescription": "Priority Boarding",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "CA0d9e99a425497eb3cdc7b7e45f67h1",
+            "carrCode": "CA",
+            "serviceType": "F",
+            "serviceSubCode": "0BJ",
+            "commercialName": "UPGRADE-up",
+            "attributesGroup": "UP",
+            "attributesSubgroup": "",
+            "serviceGroupDescription": "Upgrades",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 1
+        },
+        {
+            "id": "291f939545da4cd495297e2fee3f6cCA",
+            "carrCode": "CA",
+            "serviceType": "F",
+            "serviceSubCode": "0B5",
+            "commercialName": "升舱套餐",
+            "attributesGroup": "BDUP",
+            "attributesSubgroup": "BDUP",
+            "serviceGroupDescription": "Baggage",
+            "subGroupDescription": "Sporting Equipment",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "9da3f11515ed4ba695cf89d806db15CA",
+            "carrCode": "CA",
+            "serviceType": "A",
+            "serviceSubCode": "0DF",
+            "commercialName": "FREE BAGGAGE ALLOWANCE-bg",
+            "attributesGroup": "BG",
+            "attributesSubgroup": "",
+            "serviceGroupDescription": "Baggage",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "01eee24fa36d4b7ab2c5e7d59b2449CA",
+            "carrCode": "CA",
+            "serviceType": "C",
+            "serviceSubCode": "0C7",
+            "commercialName": "UPTO35KG BAGGAGE-bg",
+            "attributesGroup": "BG",
+            "attributesSubgroup": "",
+            "serviceGroupDescription": "Baggage",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "CA0d9e99a425497eb3cdc7b7e45f67h0",
+            "carrCode": "CA",
+            "serviceType": "F",
+            "serviceSubCode": "BD1",
+            "commercialName": "含升舱的套餐",
+            "attributesGroup": "BDUP",
+            "attributesSubgroup": "BDUP",
+            "serviceGroupDescription": "",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 1
+        },
+        {
+            "id": "1111111111233333781",
+            "carrCode": "CA",
+            "serviceType": "F",
+            "serviceSubCode": "0S5",
+            "commercialName": "通用券-fp",
+            "attributesGroup": "FP",
+            "attributesSubgroup": "FP",
+            "serviceGroupDescription": "",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "lz20150923001",
+            "carrCode": "CA",
+            "serviceType": "R",
+            "serviceSubCode": "ABC",
+            "commercialName": "延迟出票5天-rg",
+            "attributesGroup": "RG",
+            "attributesSubgroup": "zu1",
+            "serviceGroupDescription": "",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "CZ0d9e99a425497eb3cdc7b7e45f67h3",
+            "carrCode": "CA",
+            "serviceType": "F",
+            "serviceSubCode": "BD2",
+            "commercialName": "含座位优选的套餐-bdsa",
+            "attributesGroup": "BDSA",
+            "attributesSubgroup": "BDSA",
+            "serviceGroupDescription": "",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 1
+        },
+        {
+            "id": "lz20150914006",
+            "carrCode": "CA",
+            "serviceType": "R",
+            "serviceSubCode": "ABC",
+            "commercialName": "延迟出票5天",
+            "attributesGroup": "BDUP",
+            "attributesSubgroup": "zu1",
+            "serviceGroupDescription": "",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "47373a083900461591a6d8c7314e8g",
+            "carrCode": "CA",
+            "serviceType": "T",
+            "serviceSubCode": "DS7",
+            "commercialName": "延迟出票7天",
+            "attributesGroup": "TS",
+            "attributesSubgroup": "zu1",
+            "serviceGroupDescription": "",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+       
+        {
+            "id": "lz20151111-v231-612",
+            "carrCode": "CA",
+            "serviceType": "R",
+            "serviceSubCode": "0K1",
+            "commercialName": "UPTO62LB 28KG",
+            "attributesGroup": "BG",
+            "attributesSubgroup": "bg",
+            "serviceGroupDescription": "Baggage",
+            "subGroupDescription": "",
+            "subCodeTableNo163": 0
+        },
+        {
+            "id": "bgdataimp10001812",
+            "carrCode": "CA",
+            "serviceType": "P",
+            "serviceSubCode": "0DG",
+            "commercialName": "WEIGHT SYSTEM CHARGE",
+            "attributesGroup": "BG",
+            "attributesSubgroup": "XS-bg",
+            "serviceGroupDescription": "Baggage",
+            "subGroupDescription": "Baggage Excess",
+            "subCodeTableNo163": 0
+        }
+      
+    ]
+}

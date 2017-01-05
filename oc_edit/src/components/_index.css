@@ -1,0 +1,165 @@
+/**form control相关的start*/
+.form-horizontal .form-group{
+    margin-bottom: 12px;
+    margin-left: 0px;
+}
+.form-group .control-label{
+    float: left ;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.control-label.required::before{
+    content: '*';
+	color: #ff4949;
+	margin-right: 4px;
+}
+.form-group .error-container{
+    display: inline-block;
+    color: #A94442 ;
+    margin-top: 7px;
+    margin-left: 0px;
+    padding-left: 0px;
+    font-size: 12px ;
+    width: 250px;
+}
+.form-group .error-container .error-info{
+    display: block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.form-group-bottom-error.form-group{
+    position: relative;
+}
+.form-group-bottom-error .error-container{
+    position: absolute;
+    bottom: 10px ;
+}
+
+.form-control.oc_input_readonly{
+    background-color: #fff;
+    opacity: 1;
+}
+.form-control[readonly]{
+  background-color: #fff;
+  opacity: 1;
+}
+.form-control.oc_input_disabled{
+    background-color: #eee;
+    border-color: #D3DCE6;
+    color: #bbb;
+    cursor: not-allowed;
+}
+.form-control.oc_input_disabled::placeholder {
+    color: #C0CCDA
+}
+.oc-input__icon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 35px;
+    height: 100%;
+    text-align: center;
+    color: #C0CCDA;
+    cursor: pointer ;
+}
+.oc-input__icon:after {
+    content: '';
+    height: 100%;
+    width: 0;
+    display: inline-block;
+    vertical-align: middle
+}
+/**form control相关的end*/
+
+/**select 相关的start*/
+.oc-select-container{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.oc-select-dropdown{
+    position:absolute;
+    z-index:1001;
+    width: 100%;
+    border:1px solid #d3dce6;
+    border-radius:2px;
+    background-color:#fff;
+    box-shadow:0 2px 4px rgba(0,0,0,.12),0 0 6px rgba(0,0,0,.04);
+    box-sizing:border-box;
+    margin:5px 0;
+    overflow-y:auto;
+    max-height:300px;
+
+}
+
+.oc-select-dropdown__list{
+    list-style:none;
+    padding:5px 0;
+    margin:0;
+    width:100%;
+    box-sizing:border-box;
+    overflow-y:auto
+}
+.oc-select-dropdown__item{
+    font-size: 12px;
+    padding: 0px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #475669;
+    height: 28px;
+    line-height: 28px;
+    box-sizing: border-box;
+    cursor: pointer;
+ }
+ .oc-select-dropdown__item:hover {
+    background-color: #e5e9f2
+ }
+ .oc-select-dropdown__item.selected {
+    color: #fff;
+    background-color: #20a0ff
+ }
+ .oc-select-dropdown__item.selected:hover {
+    background-color: #1D8CE0
+ }
+ .oc-select-dropdown__item.is-disabled {
+	color: #C0CCDA;
+	cursor: not-allowed
+ }
+
+ .oc-select-dropdown__item.is-disabled:hover {
+	background-color: #fff
+ }
+
+ .oc-select-dropdown__empty{
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #475669;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 10px;
+    box-sizing: border-box;
+ }
+/**select 相关的end*/
+.tooltip-error{
+    position: relative;
+}
+.tooltip-error:hover::after{
+    content: attr(data-title);
+    position: absolute;
+    display: inline-block;
+    font-size: 12px;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 240px;
+    bottom: 25px;
+    left: -5px;
+    background-color: #C1C1C1 ;
+}
