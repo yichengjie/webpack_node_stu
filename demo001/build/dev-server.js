@@ -1,19 +1,28 @@
 var webpack = require('webpack') ;
 var express = require('express') ;
 var proxyMiddleware = require('http-proxy-middleware') ;
-var webpackConfig = require('./webpack.config.js') ;
+
+
+var webpackConfig = process.env.NODE_ENV === 'testing'
+  ? require('./webpack.prod.config.js')
+  : require('./webpack.dev.config.js') ;
+
+
+
 var webpackDevMiddleware = require('webpack-dev-middleware') ;
 var webpackHotMiddleware = require('webpack-hot-middleware') ;
+
 var compiler = webpack(webpackConfig);
 var config = require('../config') ;
 var path = require('path') ;
-var opn = require('opn')
+var opn = require('opn') ;
 
 if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port ;
 var app = express() ;
+
 
 var devMiddleware = webpackDevMiddleware(compiler,{
   publicPath: webpackConfig.output.publicPath,
@@ -53,7 +62,6 @@ module.exports = app.listen(port, function (err) {
   }
   var uri = 'http://localhost:' + port
   console.log('Listening at ' + uri + '\n')
-
   // when env is testing, don't need open it
   if (process.env.NODE_ENV !== 'testing') {
     opn(uri)

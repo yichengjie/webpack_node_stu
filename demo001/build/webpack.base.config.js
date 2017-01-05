@@ -1,18 +1,18 @@
 var webpack = require('webpack');
 var path = require('path');
+var config = require('../config') ;
 
 var publicPath = 'http://localhost:3000/';
 var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
-var devConfig = {
+var baseConfig = {
     entry: {
-        page1: ['./client/page1', hotMiddlewareScript],
-        page2: ['./client/page2', hotMiddlewareScript]
+        app: './src/main.js'
     },
     output: {
-        filename: './[name]/bundle.js',
-        path: path.resolve('./public'),
-        publicPath: publicPath
+        path: config.build.assetsRoot,
+        publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
+        filename: '[name].js'
     },
     devtool: 'source-map',
     module: {
@@ -26,9 +26,8 @@ var devConfig = {
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+       
     ]
 };
 
-module.exports = devConfig;
+module.exports = baseConfig;
