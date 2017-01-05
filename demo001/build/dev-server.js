@@ -23,6 +23,12 @@ if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE
 var port = process.env.PORT || config.dev.port ;
 var app = express() ;
 
+/**服务端api 地址配置 */
+app.get('/api/hello', function (req, res) {
+  res.send('Hello World!');
+});
+
+
 
 var devMiddleware = webpackDevMiddleware(compiler,{
   publicPath: webpackConfig.output.publicPath,
