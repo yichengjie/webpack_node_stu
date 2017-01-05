@@ -25,8 +25,11 @@ var app = express() ;
 
 /**服务端api 地址配置 */
 app.get('/api/hello', function (req, res) {
-  res.send('Hello World!');
+  var data ={name:'yicj',addr:'henan'} ;
+  res.json({data, message: 'success'}) ;
 });
+
+
 
 
 
