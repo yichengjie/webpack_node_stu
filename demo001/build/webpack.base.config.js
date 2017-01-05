@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var config = require('../config') ;
 var ExtractTextPlugin = require("extract-text-webpack-plugin") ;
+var projectRoot = path.resolve(__dirname, '../')
 
 var publicPath = 'http://localhost:3000/';
 var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
@@ -16,10 +17,24 @@ var baseConfig = {
         filename: '[name].js'
     },
     devtool: 'source-map',
+    resolve: {
+        extensions: ['', '.js', '.vue'],
+        fallback: [path.join(__dirname, '../node_modules')],
+        alias: {
+          'vue$': 'vue/dist/vue.common.js'
+        }
+    },
+    resolveLoader: {
+        fallback: [path.join(__dirname, '../node_modules')]
+    },
     module: {
+        preLoaders: [
+            {test: /\.vue$/,loader: 'eslint',include: projectRoot,exclude: /node_modules/},
+            {test: /\.js$/,loader: 'eslint',include: projectRoot,exclude: /node_modules/}
+        ],
         loaders: [
             {test: /\.vue$/,loader: 'vue'},
-            {test: /\.js$/,loader: 'babel',exclude: /node_modules|lib/},
+            {test: /\.js$/,loader: 'babel',include: projectRoot,exclude: /node_modules|lib/},
             {test: /\.css$/, loader: ExtractTextPlugin.extract("css-loader")},
             {test: /\.less$/,loader: ExtractTextPlugin.extract("css-loader","less-loader")},
             {test: /\.json$/,loader: 'json-loader'},
