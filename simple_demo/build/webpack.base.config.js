@@ -42,14 +42,24 @@ var baseConfig = {
             {test: /\.css$/, loader: ExtractTextPlugin.extract("css-loader")},
             {test: /\.less$/,loader: ExtractTextPlugin.extract("css-loader","less-loader")},
             {test: /\.json$/,loader: 'json-loader'},
-            {test: /\.(eot|svg|ttf|woff|woff2)$/,loader: 'file'},
-            {test: /\.(png|jpg|gif|svg)$/,loader: 'file',query: {name: '[name].[ext]?[hash]'}}
+            {test: /\.(eot|svg|ttf|woff|woff2)$/,loader: 'url',
+             query: {
+                limit: 10000,
+                name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+             }
+            },
+            {test: /\.(png|jpg|gif|svg)$/,loader: 'file',
+             query: {
+                limit: 10000,
+                name: utils.assetsPath('img/[name].[hash:7].[ext]')
+             }
+            }
         ]
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
         new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
-         new webpack.ProvidePlugin({
+        new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery"

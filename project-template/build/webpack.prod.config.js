@@ -28,7 +28,6 @@ module.exports = merge(baseWebpackConfig, {
          }
        }),
        new webpack.optimize.OccurrenceOrderPlugin(),
-       new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
        new HtmlWebpackPlugin({
             filename: process.env.NODE_ENV === 'testing'
                 ? 'index.html'
