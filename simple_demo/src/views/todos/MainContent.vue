@@ -11,7 +11,7 @@
 <script>
   import TodoList from './todo-list.vue' ;
   import TodoEdit from './todo-eidt.vue' ;
-  import {queryUserList,addUser} from './api.js' ;
+  import UserOperApi from './api.js' ;
   import _ from 'lodash' ;
   export default {
     components:{
@@ -30,7 +30,7 @@
       } ;
     },
     mounted(){/*当dom全部渲染到页面上后执行的生命周期回调函数*/
-      let promise = queryUserList() ;
+      let promise = UserOperApi.queryUserList() ;
       promise.then((userList)=>{
         userList.forEach(item=>this.list.push(item)) ;
       }) ;
@@ -41,7 +41,7 @@
         user.id = id ;
         let newUser = Object.assign({},user) ;
         this.list.push(newUser) ;
-        let promise = addUser(newUser) ;
+        let promise = UserOperApi.addUser(newUser) ;
         promise.then((msg) =>{
           console.info('新增用户成功...') ;
         }) ;
@@ -50,6 +50,7 @@
         let id = user.id ;
         let tmp = this.list.find(findUserById(id)) ;
         Object.assign(tmp,user) ;
+        UserOperApi.updateUser(user) ;
       },
       clickTr(user){
         Object.assign(this.formData,user) ;
