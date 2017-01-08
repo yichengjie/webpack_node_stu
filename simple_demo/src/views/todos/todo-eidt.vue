@@ -58,10 +58,14 @@
            return false;
         }
         let id = this.formData.id ;
+        //注意这里一定不要直接把formDate传递给下面的新增或更新方式,
+        //因为我们下面还要执行resetForm方法,如果下面两个方法中有异步方法，
+        //在异步后使用formData的话数据将有问题
+        let newData = Object.assign({},this.formData) ;
         if(id&&id.length>0){
-          this.updateUser(this.formData) ;
+          this.updateUser(newData) ;
         }else{
-           this.newAddUser(this.formData) ;
+           this.newAddUser(newData) ;
         }
         //重置现有的表单填写数据
         this.resetForm() ;
