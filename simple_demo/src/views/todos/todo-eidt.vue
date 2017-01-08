@@ -51,7 +51,12 @@
     },
     methods:{
       handleSaveOper(event){
-        console.info('formData : ' ,JSON.stringify(this.formData)) ;
+        //console.info('formData : ' ,JSON.stringify(this.formData)) ;
+        let flag = _checkFormDataValid(this.formData) ;
+        if(!flag){
+           alert('表单数据不合法') ;
+           return false;
+        }
         let id = this.formData.id ;
         if(id&&id.length>0){
           this.updateUser(this.formData) ;
@@ -67,6 +72,19 @@
       }
     }
   } ;
+
+  function _checkFormDataValid(formData){
+      if(formData.firstName===''){
+        return false;
+      }
+      if(formData.lastName === ''){
+        return false;
+      }
+      if(formData.userName === ''){
+        return false;
+      }
+      return true ;
+  }
 
   function _isUpdatePage(formData){
     if(formData.id&&formData.id.length>0){

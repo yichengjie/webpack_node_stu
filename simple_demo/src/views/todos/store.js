@@ -1,6 +1,7 @@
 const TODOLISTUSER = "todo_list_user" ;
 export default {
     addUser(user){
+        console.info('store  [addUser() id call .] ') ;
         let flag = _isSupportLocalStorage() ;
         if(!flag) return false ;
         let userList = _getUserList() ;
@@ -9,12 +10,14 @@ export default {
         _saveUserList(userList) ;
     },
     fetch(){
+       console.info('store  [fetch() id call .] ') ;
        let flag = _isSupportLocalStorage() ;
        if(!flag) return false ;
        let userList = _getUserList() ;
        return userList ;
     },
     updateUser(user){
+        console.info('store  [updateUser(user) id call .] ') ;
         let flag = _isSupportLocalStorage() ;
         if(!flag) return false ;
         let id = user.id ;
@@ -22,6 +25,16 @@ export default {
         let tmp = userList.find(_findUserById(id)) ;
         Object.assign(tmp,user) ;
         _saveUserList(userList) ;
+    },
+    deleteUserById(id){
+        console.info('store  [deleteUserById(id) id call .]  ' ) ;
+        let flag = _isSupportLocalStorage() ;
+        if(!flag) return false ;
+        let userList = _getUserList() ;
+        let newUserList = userList.filter(item=>{
+            return item.id !== id ;
+        }) ; 
+        _saveUserList(newUserList) ;
     }
 } ;//localStorage
 //从localStorage中获取userlist数组
@@ -37,6 +50,7 @@ function _getUserList (){
 }
 //将list保存到localStorage中
 function _saveUserList(userList){
+    window.localStorage.removeItem(TODOLISTUSER) ;
     window.localStorage.setItem(TODOLISTUSER,JSON.stringify(userList)) ;
 }
 

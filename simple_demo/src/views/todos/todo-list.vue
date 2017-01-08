@@ -7,29 +7,31 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Username</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item,index) in list" @click ="handleClickTrOper(item)">
-          <td>{{index +1}}</td>
-          <td>{{item.firstName}}</td>
-          <td>{{item.lastName}}</td>
-          <td>{{item.userName}}</td>
-        </tr>
+        <ListItem 
+          v-for="(item,index) in list"
+          :item="item" 
+          :index="index"
+          :clickTr="clickTr"
+          :handleDeleteUser="handleDeleteUser"
+        />
       </tbody>
     </table>
  </div>
 </template>
 <script>
+  import ListItem from './todo-list-item.vue' ;
   export default {
     props:{
       list:Array,
-      clickTr:Function
+      clickTr:Function,
+      handleDeleteUser:Function
     },
-    methods:{
-      handleClickTrOper(item){
-        this.clickTr(item) ;
-      }
+    components:{
+      ListItem
     }
   } ;
 </script>

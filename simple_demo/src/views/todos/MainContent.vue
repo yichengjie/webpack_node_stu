@@ -2,7 +2,8 @@
   <div class="main-content">
     <TodoList
       :list="list"
-      :clickTr="clickTr"/>
+      :clickTr="clickTr"
+      :handleDeleteUser="handleDeleteUser"/>
     <TodoEdit :formData="formData"
       :newAddUser="newAddUser"
       :updateUser="updateUser" />
@@ -48,9 +49,27 @@
       },
       updateUser(user){/*处理更新用户操作*/
         let id = user.id ;
+        let newUser = Object.assign({},user) ;
+        //更新页面上的用户信息
+        let promise = UserOperApi.updateUser(newUser) ;
+        promise.then(msg=>{
+           
+        }) ;
         let tmp = this.list.find(findUserById(id)) ;
         Object.assign(tmp,user) ;
-        UserOperApi.updateUser(user) ;
+      },
+      handleDeleteUser(id){
+        let promise = UserOperApi.deleteUserById(id) ;
+        promise.then(msg=>{
+           console.info('删除用户成功...')
+           let newUserList = this.list.filter(item1=>{
+             return item1.id !== id ;
+           }) ; 
+           this.list.splice(0) ;
+           newUserList.forEach(item2=>{
+             this.list.push(item2) ;
+           }) ;
+        }) ;
       },
       clickTr(user){
         Object.assign(this.formData,user) ;
