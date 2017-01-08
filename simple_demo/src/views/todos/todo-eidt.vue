@@ -26,7 +26,9 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-4 col-sm-8">
-            <button type="button" class="btn btn-default" @click ="handleSaveOper">{{btnTitle}}</button>
+            <button type="button" class="btn btn-default" 
+              @click ="handleSaveOper"
+              >{{btnTitle}}</button>
           </div>
         </div>
       </form>
