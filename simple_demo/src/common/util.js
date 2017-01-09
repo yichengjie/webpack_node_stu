@@ -1,4 +1,5 @@
 require('lib/is-loading/index.js') ;
+require('lib/bt-grow/jquery.bootstrap-growl.js') ;
 var util = {};
 var defaultPageSize = 15  ;
 
@@ -19,6 +20,44 @@ util.showLoading = function(){
 util.hideLoading = function(){
     $.isLoading("hide");
 }
+
+util.toastCfg = function (cfgTopHight){
+	return {
+		toastInfo:function(msg,topHight){
+			var realTopHeight = topHight || cfgTopHight ;
+			util.toastInfo(msg,realTopHeight) ;
+		},
+		toastDanger:function(msg,topHight){
+			var realTopHeight = topHight || cfgTopHight ;
+			util.toastDanger(msg,realTopHeight) ;
+		},
+		toastSuccess:function(msg,topHight){
+			var realTopHeight = topHight || cfgTopHight ;
+			util.toastSuccess(msg,realTopHeight) ;
+		}
+	}
+}
+
+util.toastInfo = function(msg,topHight){
+	var tmp = msg || '提示' ;
+	var h = topHight || '110' ;
+	var cfg = {type: 'info',offset: {from: 'top', amount: h*1}} ;
+	$.bootstrapGrowl(tmp,cfg) ;
+};
+
+util.toastDanger = function(msg,topHight){
+	var tmp = msg || '提示' ;
+	var h = topHight || '110' ;
+	var cfg = {type: 'danger',offset: {from: 'top', amount: h*1}} ;
+	$.bootstrapGrowl(tmp,cfg) ;
+};
+
+util.toastSuccess = function(msg,topHight){
+	var tmp = msg || '提示' ;
+	var h = topHight || '110' ;
+	var cfg = {type: 'success',offset: {from: 'top', amount: h*1}} ;
+	$.bootstrapGrowl(tmp,cfg) ;
+};
 
 util.getInitPageBeanModel = function (){
 	  var pageBean = {

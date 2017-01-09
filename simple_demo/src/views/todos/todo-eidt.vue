@@ -7,19 +7,19 @@
       </div>
       <form class="form-horizontal" role="form">
         <div class="form-group">
-          <label for="inputEmail3" class="col-sm-4 control-label">First Name</label>
+          <label  class="col-sm-4 control-label required">First Name</label>
           <div class="col-sm-8">
             <input type="text" class="form-control" v-model="formData.firstName" />
           </div>
         </div>
         <div class="form-group">
-          <label for="inputPassword3" class="col-sm-4 control-label">Last Name</label>
+          <label  class="col-sm-4 control-label required">Last Name</label>
           <div class="col-sm-8">
             <input type="text" class="form-control" v-model="formData.lastName" />
           </div>
         </div>
         <div class="form-group">
-          <label for="inputPassword3" class="col-sm-4 control-label">Username</label>
+          <label  class="col-sm-4 control-label required">Username</label>
           <div class="col-sm-8">
             <input type="text" class="form-control" v-model ="formData.userName" />
           </div>
@@ -35,6 +35,8 @@
   </div>
 </template>
 <script>
+  import util from 'common/util.js' ;
+  let toast = util.toastCfg(70) ;
   export default {
     props:{
       formData:Object,
@@ -56,7 +58,7 @@
         //console.info('formData : ' ,JSON.stringify(this.formData)) ;
         let flag = _checkFormDataValid(this.formData) ;
         if(!flag){
-           alert('表单数据不合法') ;
+           //alert('表单数据不合法') ;
            return false;
         }
         let id = this.formData.id ;
@@ -81,12 +83,15 @@
 
   function _checkFormDataValid(formData){
       if(formData.firstName===''){
+        toast.toastDanger('firstName 必填') ;
         return false;
       }
       if(formData.lastName === ''){
+        toast.toastDanger('lastName 必填') ;
         return false;
       }
       if(formData.userName === ''){
+        toast.toastDanger('userName 必填') ;
         return false;
       }
       return true ;
@@ -100,3 +105,9 @@
     }
   }
 </script>
+<style>
+  .form-group label.required::before{
+    content: '*' ;
+    color: red;
+  }
+</style>
