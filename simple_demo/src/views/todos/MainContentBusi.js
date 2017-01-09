@@ -4,14 +4,14 @@ import util from 'common/util.js' ;
 export default {
     fetchAllUserList(vvm){
         let promise = UserOperApi.queryUserList() ;
+        let curPage = vvm.pageBean.pagebar.curPage ;
+        let pageSize = 15 ;
+        vvm.list.splice(0) ;
         promise.then((userList)=>{
             userList.forEach(item=>vvm.list.push(item)) ;
-            let curPage = 1 ;
-            let pageSize = 15 ;
-            let recordCount = 75 ;
+            let recordCount = 100 ;
             let recordList = userList ;
             let pageBeanModel = util.assamblePageBean(curPage, pageSize, recordCount, recordList) ;
-            console.info('pageBeanModel : ' , pageBeanModel) ;
             //console.info('vvm.pageBean : ' ,vvm.pageBean) ;
             let pageBean = util.convertPageBeanModelToPageBean(pageBeanModel) ;
             Object.assign(vvm.pageBean,pageBean) ;

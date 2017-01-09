@@ -75,7 +75,8 @@
         Object.assign(this.formData,user) ;
       },
       queryDB(){//查询方法传递给pageBar使用
-        console.info('query db method will to execute ...') ;
+         console.info('query db method will to execute ...') ;
+         MainContentBusi.fetchAllUserList(this) ;
       }
     }
   } ;
