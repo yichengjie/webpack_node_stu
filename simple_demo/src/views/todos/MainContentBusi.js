@@ -5,7 +5,7 @@ export default {
     fetchAllUserList(vvm){
         let promise = UserOperApi.queryUserList() ;
         let curPage = vvm.pageBean.pagebar.curPage ;
-        let pageSize = 15 ;
+        let pageSize = vvm.pageBean.pagebar.pageSize || 15 ;
         vvm.list.splice(0) ;
         promise.then((userList)=>{
             userList.forEach(item=>vvm.list.push(item)) ;
