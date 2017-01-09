@@ -1,7 +1,9 @@
 <template>
   <div class="main-content">
       <QueryCondation :queryDB="queryDB" :formData="formData" />
-      <QueryList :pageBean="pageBean" :queryDB = "queryDB"/>
+      <QueryList 
+        :pageBean="pageBean" 
+        :queryDB = "queryDB"/>
   </div>
 </template>
 <script>

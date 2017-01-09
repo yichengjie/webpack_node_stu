@@ -20,18 +20,24 @@
         />
       </tbody>
     </table>
+    <Pagebar :queryDB="queryDB" 
+      :pageBean="pageBean"/>
  </div>
 </template>
 <script>
   import ListItem from './todo-list-item.vue' ;
+  import Pagebar from 'components/Pagebar.vue' ;
   export default {
     props:{
       list:Array,
       clickTr:Function,
-      handleDeleteUser:Function
+      handleDeleteUser:Function,
+      pageBean:Object,
+      queryDB:Function
     },
     components:{
-      ListItem
+      ListItem,
+      Pagebar
     }
   } ;
 </script>

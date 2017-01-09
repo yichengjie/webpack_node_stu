@@ -1,5 +1,7 @@
 require('lib/is-loading/index.js') ;
 var util = {};
+var defaultPageSize = 15  ;
+
 util.getJspPageParam=function(){
   var carrCode = "" ;
   var contextPath = "" ;
@@ -18,6 +20,33 @@ util.hideLoading = function(){
     $.isLoading("hide");
 }
 
+util.getInitPageBeanModel = function (){
+	  var pageBean = {
+			list:[],
+			pagebar:{
+				"curPage":1,
+				"pageSize":defaultPageSize,
+				"pgArr":[],
+				"pageCount":0,
+				"recordCount":0,
+				"isQueryDB":false/*是否从数据中查询的数据，有可能是页面上的排序获得*/
+			}
+		}
+		return pageBean ;
+}
+
+//将后台的PageBeanModel转化为前台需要的PageBean
+util.convertPageBeanModelToPageBean = function(pageBeanModel){
+   let list = pageBeanModel.recordList ; //将更新数据
+   let pgArr = pageBeanModel.pageNumList ;
+   let {curPage,pageSize,pageCount,recordCount}  = pageBeanModel ;
+   let isQueryDB = true ;
+   let pagebar = {curPage,pageSize,pgArr,pageCount,recordCount } ;
+   let pageBean = {list,pagebar} ;
+   return pageBean ;
+}
+
+//后台PageBeanModel的数据格式
 util.assamblePageBean = function(curPage, pageSize, recordCount, recordList) {
     let PAGESIZE_DEFAULT = 15 ;
     let pb = {} ;

@@ -4,14 +4,14 @@
         <ul class="pagination" style="margin:0;">
             <li>  <a href="javascript:void(0)" @click ="toPage(1)">首页</a></li>
             <li>
-                <a href="javascript:void(0)" aria-label="Previous" @click ="toPerviousPage">上一页</a>
+                <a href="javascript:void(0)" aria-label="Previous" @click ="toPerviousPage">&lt;&lt; </a>
             </li>
             <li v-for="l in pageBean.pagebar.pgArr"    :class="{ 'active': pageBean.pagebar.curPage==l}" >
                 <a href="javascript:void(0)"  @click="toPage(l)">{{l}}</a>
             </li>
-            <li v-if ="pageBean.pagebar.pageCount>5&& ((pageBean.pagebar.curPage+3) <=pageBean.pagebar.pageCount)"><span>...</span></li>
+            <li v-if ="pageBean.pagebar.pageCount>5&& ((pageBean.pagebar.curPage+3) <=pageBean.pagebar.pageCount)"><a href="javascript:void(0)">...</a></li>
             <li>
-                <a href="javascript:void(0)" aria-label="Next" @click ="toNextPage">下一页</a>
+                <a href="javascript:void(0)" aria-label="Next" @click ="toNextPage">&gt;&gt;</a>
             </li>
             <li><a href="javascript:void(0)" v-on:click ="toPage(pageBean.pagebar.pageCount)">末页</a></li>
         </ul>
@@ -88,4 +88,8 @@ export default {
   nav .pagination{
     margin: 0px;
   }
+   nav .pagination li a{
+     padding: 5px 8px;
+     height: 30px;
+   }
 </style>

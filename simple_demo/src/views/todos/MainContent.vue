@@ -4,7 +4,9 @@
     <TodoList
       :list="getFilterList"
       :clickTr="clickTr"
-      :handleDeleteUser="handleDeleteUser"/>
+      :handleDeleteUser="handleDeleteUser"
+      :queryDB="queryDB"
+      :pageBean="pageBean"/>
     <TodoEdit :formData="formData"
       :newAddUser="newAddUser"
       :updateUser="updateUser" />
@@ -15,6 +17,8 @@
   import TodoEdit from './todo-eidt.vue' ;
   import QueryForm from './query-form.vue' ;
   import MainContentBusi from './MainContentBusi.js' ;
+  import util from 'common/util.js' ;
+  let pageBeanModel = util.getInitPageBeanModel() ;
   export default {
     components:{
       TodoList,
@@ -34,6 +38,18 @@
           firstName:'',
           lastName:'',
           userName:''
+        },
+        //pageBean:Object.assign({},pageBeanModel)
+        pageBean:{
+          list:[],
+          pagebar:{
+            "curPage":1,
+            "pageSize":15,
+            "pgArr":[],
+            "pageCount":0,
+            "recordCount":0,
+            "isQueryDB":false/*是否从数据中查询的数据，有可能是页面上的排序获得*/
+          }
         }
       } ;
     },
@@ -57,6 +73,9 @@
       },
       clickTr(user){
         Object.assign(this.formData,user) ;
+      },
+      queryDB(){//查询方法传递给pageBar使用
+        console.info('query db method will to execute ...') ;
       }
     }
   } ;
